@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+{% extends 'page_admin.html' %}
+
+{% block title %} Home {% endblock %}
+{% block header %} ออเดอร์ของวันนี้
+    <a href="{{ url_for('input_data') }}" class="btn btn-primary" style="margin-bottom: 1.3rem; color: #417F56; font-size: 25px; font-family: Prompt; font-weight: 500; word-wrap: break-word; text-decoration: underline; background: none; border: #417F56;">+Admin</a>
+    <a href="{{ url_for('index') }}" class="btn btn-primary" style="margin-bottom: 1.3rem; color: #417F56; font-size: 25px; font-family: Prompt; font-weight: 500; word-wrap: break-word; text-decoration: underline; background: none; border: #417F56;">Admin</a>
+    <a href="{{ url_for('logout_admin') }}" class="btn btn-primary" style="margin-bottom: 1.3rem; color: #417F56; font-size: 25px; font-family: Prompt; font-weight: 500; word-wrap: break-word; text-decoration: underline; background: none; border: #417F56;">ลงชื่อออก</a>
+{% endblock %}
+{% block body %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                <strong>{{ category.capitalize() }}!</strong> {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+        <div>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Order</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Select</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in order_list %}
+                        <tr>
+                            <td>{{ order.user_name }}</td>
+                            <td>{{ order.user_email }}</td>
+                            <td>{{ order.menu_name }}</td>
+                            <td>{{ order.menu_price }}</td>
+                            <td>
+                                <a href="{{ url_for('id_order', id=order.id) }}" class="btn btn-success">ยืนยันรับออเดอร์</a>
+                                <a href="{{ url_for('cancel', id=order.id) }}" class="btn btn-danger">ยกเลิกออเดอร์</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>

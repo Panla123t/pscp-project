@@ -1,0 +1,27 @@
+{% extends 'page.html' %}
+
+{% block title %} Status {% endblock %}
+
+{% block header %} Status {% endblock %}
+
+{% block body %}
+<div class="text-center my-5 fw-bolder fst-italic fs-1">รายการที่สั่ง</div>
+<div class="my-5 d-flex align-items-center justify-content-center">
+    <div class="container border border-black rounded-5 p-5 bg-light bg-opacity-75">
+    {% for order in order_list %}
+        <ul>
+            <li>{{ order.user_name }}</li>
+            <li>{{ order.user_email }}</li>
+            <li>{{ order.menu_name }}</li>
+            <li>{{ order.menu_price }}</li>
+        </ul>
+    {% endfor %}
+</div>
+</div>
+<div>
+    {{ message }}
+</div>
+
+
+
+{% endblock %}

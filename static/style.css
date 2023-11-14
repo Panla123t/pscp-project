@@ -1,0 +1,117 @@
+body {
+    background: #FFFBF4;
+    width: 390px;
+    height: 844px;
+
+}
+
+.title {
+    color: #FF7A00;
+    text-align: center;
+    left: 4500px;
+    font-family: 'Offside', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+}
+
+.title1 {
+    color: #000;
+    text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+    font-family: 'Prompt', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 227px;
+}
+
+.title2 {
+    color: #000;
+    font-family: 'Prompt', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 227px;
+
+}
+
+.title3 {
+    color: #000;
+    text-align: center;
+    text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+    font-family: 'Prompt', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.title4 {
+    background: linear-gradient(99deg, #FF4242 6.48%, #F4D155 48.53%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Prompt', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+.tap {
+    width: 30px;
+    height: 23.446px;
+    flex-shrink: 0;
+}
+
+.border1 {
+    border-radius: 19px;
+    border: 1px solid #FFB700;
+    background: #FCFCFC;
+    width: 214px;
+    height: 40px;
+    flex-shrink: 0;
+    color: #FF7A00;
+    font-family: Prompt;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.border2 {
+    border-radius: 19px;
+    border: 1px solid #FFB700;
+    background: #FCFCFC;
+    width: 214px;
+    height: 40px;
+    flex-shrink: 0;
+    color: #FF7A00;
+    font-family: Prompt;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.border3 {
+    border-radius: 19px;
+    border: 1px solid #FFB700;
+    background: #FCFCFC;
+    width: 214px;
+    height: 40px;
+    flex-shrink: 0;
+    color: #FF7A00;
+    font-family: Prompt;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/*login*/

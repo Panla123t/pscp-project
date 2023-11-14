@@ -1,0 +1,53 @@
+{% extends 'navbar-page.html' %}
+
+{% block title %} Menu {% endblock %}
+
+{% block header %} Menu {% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Offside&display=swap');
+
+        body {
+            font-family: 'Offside', sans-serif;
+        }
+
+    </style>
+    </head>
+    <body>
+        <div class="mt-5">
+        <div class="my-5 d-flex align-items-center justify-content-center">
+        <div class="container border border-black rounded-5 p-5 bg-light bg-opacity-75">
+        <form action="{{ url_for('receive') }}" method="POST">
+            <div class="custom-select-content-wrapper">
+                <div class="custom-select-form-wrapper">
+                    <h1 class="custom-select-heading h-1 fw-nornal" style="color:#FF8800;">เส้น</h1>
+                    <h2 class="custom-select-heading2" id="h2">จำเป็นต้องเลือก</h2>
+                        
+                            <fieldset>
+                                <select name="id_menu" id="menu_id" class="custom-select sources" data-placeholder="Select box" oonchange="this.form.submit()">
+                                    {% for menu in data %}
+                                        <option value="{{ menu.id }}">{{ menu.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </fieldset>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-success btn-lg mt-3" id="buttonn">ยืนยันคำสั่งจอง</button>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+</div>
+</body>
+</html>
+{% endblock %}
